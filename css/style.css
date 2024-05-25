@@ -17,6 +17,28 @@ nav {
   display: flex;
 }
 
+nav .navbar-start {
+  display: flex;
+}
+
+nav .navbar-center {
+  font-weight: 800;
+  font-size: 1rem;
+  margin-inline: 1rem 1rem;
+  align-content: center;
+  justify-content: center;
+}
+
+nav .navbar-end {
+  flex-wrap: wrap;
+  font-size: 80%;
+  text-align: left;
+}
+
+nav .navbar-end .waktu {
+  margin-left: 1rem;
+}
+
 .navbar-start .dropdown ul {
   background-color: #111316;
 }
@@ -344,9 +366,29 @@ footer .svg .grid a svg:hover {
   body {
     font-size: 80%;
   }
-  .header {
+
+  header {
     background-color: #333;
     color: #fff;
+  }
+
+  nav .navbar-start {
+    width: fit-content;
+  }
+
+  nav .navbar-center {
+    font-weight: 800;
+    font-size: 1rem;
+    margin-inline: 1rem 1rem;
+    align-content: center;
+    justify-content: center;
+  }
+
+  nav .navbar-end {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 80%;
+    text-align: left;
   }
 
   section {
@@ -472,10 +514,15 @@ footer .svg .grid a svg:hover {
     margin-inline: 1rem 1rem;
   }
 
-  nav .navbar-akhir {
+  nav .navbar-end {
     display: flex;
     flex-wrap: wrap;
     font-size: 80%;
+  }
+
+  nav .navbar-end .waktu {
+    margin-left: 0;
+    text-align: left;
   }
 
   .card {
