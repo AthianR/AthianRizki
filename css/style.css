@@ -99,27 +99,21 @@ section {
   display: flex;
   background-color: #201c1c94;
   height: 100vh;
-  padding: 4rem;
 }
 
 .card .bio .card-biodata {
-  background-color: #524c4c;
   display: flex;
+  position: relative;
   border: 100px;
-}
-
-.card .bio .card-biodata:hover {
-  background-color: hsl(var(--in));
-  transition: 500ms;
-  display: flex;
-  border: 100px;
-  transform: 500ms;
-  color: black;
-  font-weight: 700;
+  margin: 4rem;
 }
 
 .card .bio .card-biodata .body-content h1 {
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 .card .bio .card-biodata .body-content table {
@@ -648,25 +642,41 @@ footer .svg .grid a svg:hover {
   }
 
   .card .bio {
-    display: inline;
-    padding: 1rem;
-    background-color: #201c1c94;
+    display: flex;
   }
 
   .card .bio .card-biodata {
-    width: screen;
     display: flex;
-    background-color: #524c4c;
+    position: relative;
+    padding: 0;
+    margin: 0;
   }
 
-  .card .bio .card-biodata:hover {
-    background-color: hsl(var(--in));
-    transition: 500ms;
+  .crad .bio .card-biodata .body-content {
     display: flex;
-    border: 100px;
-    transform: 500ms;
-    color: black;
-    font-weight: 700;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .card .bio .card-biodata .body-content .judul {
+    display: flex;
+    position: relative;
+    margin-block-start: 4rem;
+  }
+
+  .card .bio .card-biodata .body-content .judul p {
+    font-size: 2rem;
+    color: white;
+    margin: 1rem;
+    font-weight: 800;
+  }
+
+  .card .bio .card-biodata .body-content .table-auto {
+    display: flex;
+    position: relative;
+    margin: 0.5rem;
+    background-color: rgba(70, 58, 58, 0.562);
+    border-radius: 1rem;
   }
 
   .card .bio .card-biodata .body-content .table-auto table {
