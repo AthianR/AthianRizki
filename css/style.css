@@ -47,6 +47,7 @@ section {
   background-repeat: no-repeat;
   min-height: screen;
   padding-top: 8rem;
+  height: 100vh;
 }
 
 .card .home .card-home .hero-content {
@@ -130,7 +131,7 @@ section {
   margin-right: 1rem;
   margin-left: 1rem;
   background-image: url("../images/pao-20-21.jpg");
-  border-radius: 10px;
+  border-radius: 100px;
   background-repeat: no-repeat;
   background-size: cover;
   height: auto;
@@ -147,7 +148,7 @@ section {
 }
 
 .card .content1 .flex .grid {
-  background-color: #111316b6;
+  background-color: #000000a1;
 }
 
 .card .content1 .flex .grid:hover {
@@ -475,12 +476,14 @@ footer .svg .grid a svg:hover {
     display: flex;
     position: relative;
     height: 100vh;
+    width: fit-content;
   }
 
   .card .home {
     height: 100vh;
-    padding: 0;
-    margin: 0;
+    position: relative;
+    width: 100%;
+    display: flex;
   }
 
   .card .home .card-home {
@@ -567,15 +570,24 @@ footer .svg .grid a svg:hover {
     text-align: center;
   }
 
+  .card .content1 .flex .grid {
+    margin-top: 4rem;
+  }
+
   .card .content1 .flex .grid .subtitle {
     justify-content: center;
     text-align: center;
     margin-top: -1rem;
   }
 
-  .card .content1 .flex .grid .body-content p {
+  .card .content1,
+  .content2,
+  .content3,
+  .flex .grid .body-content p {
     text-align: justify;
     font-size: 1rem;
+    color: white;
+    font-weight: 800;
   }
 
   .card .content2 {
