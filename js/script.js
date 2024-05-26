@@ -41,35 +41,63 @@ function tampilkanTanggal() {
   jam = jam % 12 || 12; // Konversi ke format 12 jam
 
   const tanggalLengkap = `${hari}, ${tanggalHariIni} ${bulan} ${tahun}`;
-  const waktu = `${jam}:${menit}:${detik}  ${amPm}`;
-  document.getElementById("tanggal").innerText = tanggalLengkap;
-  document.getElementById("waktu").innerText = waktu;
+  const waktu = `${jam}:${menit}:${detik} ${amPm}`;
+
+  // Memastikan elemen dengan id 'tanggal' dan 'waktu' ada sebelum mengaksesnya
+  const tanggalElement = document.getElementById("tanggal");
+  const waktuElement = document.getElementById("waktu");
+
+  if (tanggalElement) {
+    tanggalElement.innerText = tanggalLengkap;
+  }
+  if (waktuElement) {
+    waktuElement.innerText = waktu;
+  }
 }
 
-// Panggil fungsi untuk menampilkan tanggal saat halaman dimuat
-setInterval(tampilkanTanggal, 1000);
-tampilkanTanggal();
-
-const thumbnails = document.querySelectorAll(".thumbnail");
-const overlay = document.getElementById("overlay");
-const closeButton = document.getElementById("close-button");
-const fullImage = document.getElementById("full-image");
+// Fungsi untuk menunjukkan overlay dengan gambar penuh
 function showOverlay(imageSrc) {
-  fullImage.src = imageSrc;
-  overlay.style.display = "flex";
+  const overlay = document.getElementById("overlay");
+  const fullImage = document.getElementById("full-image");
+  if (overlay && fullImage) {
+    fullImage.src = imageSrc;
+    overlay.style.display = "flex";
+  }
 }
+
+// Fungsi untuk menyembunyikan overlay
 function hideOverlay() {
-  overlay.style.display = "none";
+  const overlay = document.getElementById("overlay");
+  if (overlay) {
+    overlay.style.display = "none";
+  }
 }
-thumbnails.forEach((thumbnail) => {
-  thumbnail.addEventListener("click", () => {
-    const imageSrc = thumbnail.getAttribute("data-image");
-    showOverlay(imageSrc);
+
+// Menambahkan event listener ketika DOM sudah sepenuhnya dimuat
+document.addEventListener("DOMContentLoaded", () => {
+  // Panggil fungsi untuk menampilkan tanggal saat halaman dimuat
+  setInterval(tampilkanTanggal, 1000);
+  tampilkanTanggal();
+
+  // Menambahkan event listener ke thumbnail
+  const thumbnails = document.querySelectorAll(".thumbnail");
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener("click", () => {
+      const imageSrc = thumbnail.getAttribute("data-image");
+      if (imageSrc) {
+        showOverlay(imageSrc);
+      }
+    });
   });
-});
-closeButton.addEventListener("click", () => {
-  hideOverlay();
-});
-fullImage.addEventListener("click", () => {
-  hideOverlay();
+
+  // Menambahkan event listener untuk menutup overlay
+  const closeButton = document.getElementById("close-button");
+  const fullImage = document.getElementById("full-image");
+
+  if (closeButton) {
+    closeButton.addEventListener("click", hideOverlay);
+  }
+  if (fullImage) {
+    fullImage.addEventListener("click", hideOverlay);
+  }
 });
