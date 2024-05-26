@@ -218,7 +218,6 @@ section {
 .sert {
   display: flex;
   position: relative;
-  padding: 5rem;
 }
 
 .sert .flex .grid {
@@ -439,6 +438,20 @@ footer .svg .grid a svg:hover {
     margin: 1rem;
   }
 
+  .sert {
+    display: flex;
+    position: relative;
+  }
+
+  .sert .flex {
+    display: flex;
+    padding-block: 6rem 2rem;
+    padding-inline: 1rem;
+    margin: 0;
+    gap: 4;
+    flex-direction: column;
+  }
+
   .sert .flex .grid .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -652,8 +665,6 @@ footer .svg .grid a svg:hover {
   .sert {
     display: flex;
     position: relative;
-    margin-top: 4rem;
-    padding: 1rem;
   }
 
   .sert .flex .grid h1 {
