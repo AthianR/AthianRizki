@@ -114,28 +114,33 @@ section {
 }
 
 .card .bio {
-  display: flex;
+  display: inline;
   background-color: #201c1c94;
   height: 100vh;
 }
 
 .card .bio .card-biodata {
   display: flex;
+  justify-content: center;
   position: relative;
   border: 100px;
-  margin: 4rem;
+  padding-block: 3rem;
 }
 
 .card .bio .card-biodata .body-content h1 {
   padding: 1rem;
   display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+}
+
+.card .bio .card-biodata .body-content .table-auto {
+  padding: 0.5rem;
+  background-color: #111316;
+  border-radius: 1rem;
 }
 
 .card .bio .card-biodata .body-content table {
   font-size: 1rem;
+  margin: 1rem;
 }
 
 .card .content1,
@@ -365,11 +370,16 @@ footer .svg .grid a svg:hover {
   }
 
   .card .home .card-home .hero-content .foto img {
-    width: 12rem;
+    max-width: 8rem;
+  }
+
+  .card-body {
+    padding: 0.8rem;
   }
 
   .body-content {
-    display: inline;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .body-content h1 {
@@ -405,6 +415,28 @@ footer .svg .grid a svg:hover {
   .card .bio .card-biodata {
     width: 100%;
     display: inline;
+  }
+
+  .bio .card-biodata .body-content {
+    display: inline;
+    flex-wrap: wrap;
+  }
+
+  .bio .card-biodata .body-content .judul {
+    display: flex;
+    position: relative;
+  }
+
+  .bio .card-biodata .body-content .judul p {
+    display: flex;
+    font-size: large;
+  }
+
+  .bio .card-biodata .body-content .table-auto {
+    padding: 0.5rem;
+    background-color: #111316;
+    border-radius: 1rem;
+    margin: 1rem;
   }
 
   .sert .flex .grid .grid {
@@ -604,7 +636,7 @@ footer .svg .grid a svg:hover {
     display: flex;
     position: relative;
     margin: 0.5rem;
-    background-color: rgba(70, 58, 58, 0.562);
+    background-color: #111316;
     border-radius: 1rem;
   }
 
