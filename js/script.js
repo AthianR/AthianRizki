@@ -1,3 +1,15 @@
+function tahun() {
+  const tanggal = new Date();
+  const tahun = tanggal.getFullYear();
+  const thn = `${tahun}`;
+  document.getElementById("thn").innerText = thn;
+}
+
+// Pastikan elemen dengan ID "waktu" ada di DOM sebelum mengaksesnya
+document.addEventListener("DOMContentLoaded", () => {
+  tahun();
+});
+
 // Array nama hari dan bulan dalam bahasa Indonesia
 const namaHari = [
   "Minggu",
